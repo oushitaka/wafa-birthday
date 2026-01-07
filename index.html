@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Wafa!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="icons.svg">
+    
+</head>
+<body>
+
+    <!-- ELEMENT AUDIO BACKGROUND -->
+    <!-- GANTI 'src' DI BAWAH INI DENGAN LINK MP3 KAMU -->
+    <audio id="bg-music" loop>
+        <source src="kasihputih.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- AUDIO SOUND EFFECT CLICK -->
+    <!-- GANTI 'src' JIKA INGIN MENGGUNAKAN SUARA LAIN -->
+    <audio id="click-sound">
+        <source src="klik.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL PENGATUR MUSIK (POJOK KANAN ATAS) -->
+    <div class="music-btn-container">
+        <button id="music-toggle" class="music-btn" title="Play/Pause Music">
+            🔇
+        </button>
+    </div>
+
+    <!-- ELEMENT BACKGROUND DOODLES (BINTANG MENYEBAR) -->
+    <!-- Bintang-bintang dengan posisi acak menggunakan inline style untuk sebaran -->
+    
+    <!-- Kiri Atas -->
+    <div class="bg-doodle doodle-star-bg" style="top: 5%; left: 5%; animation-delay: 0s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 15%; left: 15%; animation-delay: 1.2s; font-size: 1rem;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 25%; left: 5%; animation-delay: 2.5s;">✦</div>
+
+    <!-- Kanan Atas -->
+    <div class="bg-doodle doodle-star-bg" style="top: 8%; right: 8%; animation-delay: 0.5s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 20%; right: 20%; animation-delay: 1.8s; font-size: 2rem;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 30%; right: 5%; animation-delay: 3s;">✦</div>
+
+    <!-- Kiri Bawah -->
+    <div class="bg-doodle doodle-star-bg" style="top: 60%; left: 8%; animation-delay: 0.8s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 75%; left: 20%; animation-delay: 2.2s; font-size: 1.2rem;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 85%; left: 5%; animation-delay: 1.5s;">✦</div>
+
+    <!-- Kanan Bawah -->
+    <div class="bg-doodle doodle-star-bg" style="top: 65%; right: 10%; animation-delay: 1s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 80%; right: 25%; animation-delay: 2.8s; font-size: 0.8rem;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 90%; right: 5%; animation-delay: 0.3s;">✦</div>
+
+    <!-- Tengah / Acak -->
+    <div class="bg-doodle doodle-star-bg" style="top: 10%; left: 50%; animation-delay: 4s; font-size: 1rem;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 90%; left: 45%; animation-delay: 3.5s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 50%; left: 10%; animation-delay: 2s;">✦</div>
+    <div class="bg-doodle doodle-star-bg" style="top: 50%; right: 10%; animation-delay: 1.5s;">✦</div>
+
+
+    <div class="container">
+        <!-- Dekorasi Pojok -->
+        <div class="corner-doodle top-left"></div>
+        <div class="corner-doodle bottom-right"></div>
+
+        <!-- 1. HALAMAN PEMBUKA (LANDING) -->
+        <div id="landing-page" class="page-section active">
+            <h1>HELLO WAFA,<br>WELCOME</h1>
+            <h2>TO YOUR BIRTHDAY PAGE</h2>
+            <br><br>
+            <button class="sketch-btn btn-green" onclick="navigateTo('menu-page')">CLICK THIS</button>
+        </div>
+
+        <!-- 2. HALAMAN MENU UTAMA -->
+        <div id="menu-page" class="page-section">
+            <h1>MAIN MENU</h1>
+            <h2>~ what do you want to see? ~</h2>
+            
+            <button class="sketch-btn" onclick="navigateTo('wishes-page')">WITH ALL MY HEART</button>
+            <button class="sketch-btn btn-blue" onclick="navigateTo('about-page')">ABOUT YOU</button>
+            <button class="sketch-btn btn-purple" onclick="navigateTo('game-page')">GAMES TO PLAY</button>
+            <button class="sketch-btn btn-yellow" onclick="navigateTo('place-page')">PLACES TO GO</button>
+            <button class="sketch-btn btn-green" onclick="navigateTo('spotify-page')">SPOTIFY PLAYLIST</button>
+        </div>
+
+        <!-- 3. HALAMAN WISHES -->
+        <div id="wishes-page" class="page-section">
+            <h1>HAPPY BIRTHDAY!</h1>
+            <div style="text-align: justify; padding: 0 10px; margin-bottom: 20px;">
+                <p>Hello Wafa Masyrifah Aini</p>
+                <p>I am so happy that you turned 22 today. HAPPY BIRTHDAY!! 🎂🎈 I wanted to take a moment to remind you that you are the best, strongest, prettiest, and cutest girl I ever met. Honestly, out of everyone in the world, you’re the #1 prettiest girl in the world and that’s just so cool.thanks for come into my life, you saved my life OMG i love you soo much, thank yooouuuu sooo much</p>
+
+                <p>I wish you all the absolute best on your birthday. I made this special surprise with all my heart, thinking about you the whole time, so I really hope you love it as much as I loved making it! ❤️ Also, just so you know, I have a gift waiting for you. 🎁 I’m saving it to give to you in person when we finally meet again. And most importantly, don't forget! if you ever need to vent, share a story, or talk about anything at all, I'm all ears.</p>
+                <!-- Kamu bisa menambahkan paragraf sebanyak mungkin di sini -->
+            </div>
+            
+            <!-- TOMBOL SEND LOVE -->
+            <button class="sketch-btn btn-love" onclick="triggerLoveExplosion()">SEND LOVE ❤️</button>
+
+            <button class="sketch-btn btn-back" onclick="navigateTo('menu-page')">← BACK TO MENU</button>
+        </div>
+
+        <!-- 4. HALAMAN ABOUT YOU -->
+        <div id="about-page" class="page-section">
+            <h1>ABOUT YOU</h1>
+            <p>THIS IS HOW I LOOK AT YOU!</p>
+            
+            <div class="carousel-wrapper" id="slider-about">
+                <button class="slider-btn prev" onclick="changeSlide('slider-about', -1)">❮</button>
+                
+                <div class="polaroid-container">
+                    
+                    <!-- FOTO 1 -->
+                    <div class="polaroid active">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="SAWAKO.jpg" alt="Foto 1">
+                        </div>
+                        <div>THIS IS 100% YOU, Kuronuma Sawako</div>
+                    </div>
+
+                    <!-- FOTO 2 -->
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="NOELLE.jpg" alt="Foto 2">
+                        </div>
+                        <div>This is you too, this anime made us talk to each other sooo much</div>
+                    </div>
+
+                    <!-- FOTO 3 -->
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="Akane.jpg" alt="Foto 3">
+                        </div>
+                        <div>This is you, so cuteee and amazing, let me call you the amazing wafa</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="MITSUHA.jpg" alt="Foto 3">
+                        </div>
+                        <div>This girl remind me of you soooo much</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="FUTABA.jpg" alt="Foto 3">
+                        </div>
+                        <div>You, again, always cuteee</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="Hori.jpg" alt="Foto 3">
+                        </div>
+                        <div>This is the first anime we talk to and the rest is history thank you so much horimiya</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="KAORU.jpg"Foto 3">
+                        </div>
+                        <div>Wafaa mirip kaoruu, suka makann n thats sooo cutee</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="AKASHI.jpg" alt="Foto 3">
+                        </div>
+                        <div>Your anime crushhh, hes so cool and amazing so thats so reasonable that you like him soo much</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="TOGE.jpg" alt="Foto 3">
+                        </div>
+                        <div>This is your anime crush tooo, even you use it on your instagram name, inumashie, awwee thats soo cutee</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="PSYDUCK.jpg" alt="Foto 3">
+                        </div>
+                        <div>PSYDUCKK your favorite pokemon, as cute as uuu</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="otter.jpg" alt="Foto 3">
+                        </div>
+                        <div>its your favorite animal, otter, sooo cutteeee </div>
+                    </div>
+
+                     <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="hirono.jpg" alt="Foto 3">
+                        </div>
+                        <div>its usss</div>
+                    </div>
+
+                    <div class="polaroid">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK DI BAWAH INI DENGAN FOTO KAMU -->
+                            <img src="sawaka.jpg" alt="Foto 3">
+                        </div>
+                        <div>its usss part 2</div>
+                    </div>
+
+                </div>
+
+                <button class="slider-btn next" onclick="changeSlide('slider-about', 1)">❯</button>
+            </div>
+            <button class="sketch-btn btn-back" onclick="navigateTo('menu-page')">← BACK TO MENU</button>
+        </div>
+
+        <!-- 5. HALAMAN GAMES TO PLAY -->
+        <div id="game-page" class="page-section">
+            <h1>GAMES TO PLAY</h1>
+            <p>Ayo main bareng!</p>
+            
+            <div class="carousel-wrapper" id="slider-games">
+                <button class="slider-btn prev" onclick="changeSlide('slider-games', -1)">❮</button>
+                
+                <div class="polaroid-container">
+                    <!-- Game 1 -->
+                    <div class="polaroid active" data-desc="Seru banget deh pokoknya kita adventure bareng, nanti kita buat farm yang keren dan lucu, kalo ada free time kita main yaaa ">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK GAMBAR GAME 1 -->
+                            <img src="Stardew valley.jpg" alt="It Takes Two">
+                        </div>
+                        <div>STARDEW VALLEY</div>
+                    </div>
+                    <!-- Game 2 -->
+                    <div class="polaroid" data-desc="Udah pasti the best game, PUBG woohoo, bisa sambil jalan jalan terus kalo ada event yang lucu pasti seru, nanti kita naik kuda aja biar kerasa adventure nya">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK GAMBAR GAME 2 -->
+                            <img src="PUBG.jpg" alt="Overcooked">
+                        </div>
+                        <div>PUBG</div>
+                    </div>
+                    <!-- Game 3 -->
+                    <div class="polaroid" data-desc="Ini juga the best, karakternya lucu lucu, gua jugaa sekarang rumahnya udah bagus jadi kita bisa jalan jalan bareng, kita harus main ini lagi, kangen bangettt :(">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK GAMBAR GAME 3 -->
+                            <img src="KR.jpg" alt="Stardew Valley">
+                        </div>
+                        <div>KART RIDER</div>
+                    </div>
+
+                    <div class="polaroid" data-desc="Kita belum pernah main inii, banyak game serunyaa, kita harus cobain semuanyaa">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK GAMBAR GAME 3 -->
+                            <img src="ROBLOX.jpg" alt="Stardew Valley">
+                        </div>
+                        <div>ROBLOX</div>
+                    </div>
+
+
+                </div>
+
+                <button class="slider-btn next" onclick="changeSlide('slider-games', 1)">❯</button>
+            </div>
+            
+
+            <!-- Deskripsi Dinamis -->
+            <div id="slider-games-desc" class="dynamic-description">
+                Seru banget deh pokoknya kita adventure bareng, nanti kita buat farm yang keren dan lucu, kalo ada free time kita main yaaa 
+            </div>
+
+            <button class="sketch-btn btn-back" onclick="navigateTo('menu-page')">← BACK TO MENU</button>
+        </div>
+
+        <!-- 6. HALAMAN PLACES TO GO -->
+        <div id="place-page" class="page-section">
+            <h1>PLACES TO GO</h1>
+            <p>Let's make memories!</p>
+            
+            <div class="carousel-wrapper" id="slider-places">
+                <button class="slider-btn prev" onclick="changeSlide('slider-places', -1)">❮</button>
+                
+                <div class="polaroid-container">
+                    <!-- Place 1 -->
+                    <div class="polaroid active" data-desc="Ini the best place buat hangout bareng, tempatnya bagus bangett, aesthetic gituu n its your style banget jadii pas banget buat kita main disana, i hope one day kita bisa kesana bareng yaa">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK FOTO TEMPAT 1 -->
+                            <img src="Kaoruko.jpg" alt="Aquarium">
+                        </div>
+                        <div>Aquarium</div>
+                    </div>
+                    <!-- Place 2 -->
+                    <div class="polaroid" data-desc="Nerdyy thingsss u talk abttt, pottery painting n masih banyak lagii, your artstyle lucu lucu n bagusss, klo di lukis di potter pastii lucuu bangett, kita harus banget cobain inii">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK FOTO TEMPAT 2 -->
+                            <img src="Zoe Ling _ Slow Living & Luxury.jpg" alt="Art Museum">
+                        </div>
+                        <div>Nerdy things</div>
+                    </div>
+                    <!-- Place 3 -->
+                    <div class="polaroid" data-desc="OK this is my fav thingsss, Pokemon, i hope u dont get tired of this, kita harus cobain brewek barengg yaa, ke Aeon tanjung barat yuuu nanti kita sambil do another thingss yang seruu, makan sushi barengg terus cerita cerita abt your australian adventure(OMG CANT WAIT) teruss funworld nya gedee banget lohh sekarang, banyak permainan serunyaa kita harus cobainn">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK FOTO TEMPAT 3 -->
+                            <img src="pokemon cards.jpg" alt="Pasar Malam">
+                        </div>
+                        <div>AEON</div>
+                    </div>
+
+
+                     <div class="polaroid" data-desc="Of courseee kita wajib ke sinii, GI wohooo, our places, kita nonton bareng lagii nanti disinii">
+                        <div class="polaroid-img">
+                            <!-- GANTI LINK FOTO TEMPAT 3 -->
+                            <img src="GI.jpg" alt="Pasar Malam">
+                        </div>
+                        <div>GRAND INDONESIA</div>
+                    </div>
+
+                </div>
+
+                <button class="slider-btn next" onclick="changeSlide('slider-places', 1)">❯</button>
+            </div>
+
+            <!-- Deskripsi Dinamis -->
+            <div id="slider-places-desc" class="dynamic-description">
+                Ini the best place buat hangout bareng, tempatnya bagus bangett, aesthetic gituu n its your style banget jadii pas banget buat kita main disana, i hope one day kita bisa kesana bareng yaa
+            </div>
+
+            <button class="sketch-btn btn-back" onclick="navigateTo('menu-page')">← BACK TO MENU</button>
+        </div>
+
+        <!-- 7. HALAMAN SPOTIFY (PLAYLIST STYLE) -->
+        <div id="spotify-page" class="page-section">
+            <h1>YOUR PLAYLIST</h1>
+            <h2>I MAKE A PLAYLIST THAT DESCRIBE YOU</h2>
+            <h2>I HOPE YOU LOVE IT <3</h2>
+            
+            <div class="spotify-container">
+                <div class="spotify-item" onclick="alert('Playing: Happy Birthday')">
+                    <div class="spotify-number">1</div>
+                    <div class="spotify-img-box">
+                        <!-- COVER LAGU 1 -->
+                        <img src="perfect.jpg" alt="Cover">
+                    </div>
+                    <div class="spotify-info">
+                        <div class="song-title">Perfect</div>
+                        <div class="song-artist">Ed Sheeran</div>
+                    </div>
+                </div>
+                <div class="spotify-item">
+                    <div class="spotify-number">2</div>
+                    <div class="spotify-img-box">
+                         <!-- COVER LAGU 2 -->
+                        <img src="just.jpg" alt="Cover">
+                    </div>
+                    <div class="spotify-info">
+                        <div class="song-title">Just The Way You Are</div>
+                        <div class="song-artist">Bruno Mars</div>
+                    </div>
+                </div>
+                <div class="spotify-item">
+                    <div class="spotify-number">3</div>
+                    <div class="spotify-img-box">
+                         <!-- COVER LAGU 3 -->
+                        <img src="what.jpg" alt="Cover">
+                    </div>
+                    <div class="spotify-info">
+                        <div class="song-title">What Makes You Beautiful</div>
+                        <div class="song-artist">One Direction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BUTTON LINK KE SPOTIFY -->
+            <a href="https://open.spotify.com/playlist/2bG149yHdJqMwNmWYh1yQb?si=09045e0e69664ad8" target="_blank" class="sketch-btn btn-green" style="margin-top: 10px;">SEE PLAYLIST ON SPOTIFY</a>
+
+            <button class="sketch-btn btn-back" onclick="navigateTo('menu-page')">← BACK TO MENU</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <footer style="font-family: 'Patrick Hand', cursive; text-align: center; margin-top: 50px; margin-bottom: 20px; font-size: 1rem; color: #665555;">
+    &copy; 2026 oushitaka. with all my heart.
+</footer>
+</body>
+</html>

@@ -1,0 +1,385 @@
+        /* --- AWAL KODE CSS --- */
+
+        /* Import Font Tulisan Tangan */
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+        :root {
+            --pencil: #2d2d2d; /* Menggelapkan warna pensil agar bintang lebih hitam */
+            --paper: #fff0f5;
+            --pink-marker: #ffb7b2;
+            --pink-shadow: #ff9e99;
+            --green-marker: #b5ead7;
+            --blue-marker: #c7ceea;
+            --yellow-marker: #ffdac1;
+            --purple-marker: #e0bbe4;
+        }
+
+        /* --- GLOBAL & RESET --- */
+        * { box-sizing: border-box; }
+
+        html, body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="black" stroke="white" stroke-width="1" d="M2,2 L12,28 L16,18 L26,26 L29,22 L19,15 L30,10 L2,2 Z"/></svg>'), auto;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Patrick Hand', cursive;
+            background-color: var(--paper);
+            color: var(--pencil);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            
+            /* Background Grid Pattern */
+            background-image: 
+                linear-gradient(var(--pencil) 1px, transparent 1px),
+                linear-gradient(90deg, var(--pencil) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: -1px -1px;
+            background-blend-mode: multiply;
+            position: relative; /* Penting untuk background doodle */
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(255, 240, 245, 0.94);
+            z-index: -1;
+            position: fixed; /* Agar background tetap saat scroll */
+        }
+
+        /* --- MUSIC TOGGLE BUTTON --- */
+        .music-btn-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .music-btn {
+            background: white;
+            border: 2px solid var(--pencil);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.2s;
+            outline: none;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .music-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* --- BACKGROUND ANIMATION (DOODLES) --- */
+        .bg-doodle {
+            position: fixed;
+            z-index: -1; /* Di belakang konten utama */
+            opacity: 0.6; /* Sedikit lebih gelap agar terlihat */
+            pointer-events: none; /* Agar tidak bisa diklik */
+            color: var(--pencil);
+        }
+
+        /* CSS untuk Bintang Latar Belakang */
+        .doodle-star-bg {
+            font-size: 1.5rem;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        /* --- CONTAINER UTAMA (KERTAS) --- */
+        .container {
+            text-align: center;
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            background: white;
+            border: 2px solid var(--pencil);
+            /* Border Wobbly */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            box-shadow: 
+                5px 5px 0px rgba(0,0,0,0.1),
+                15px 20px 0px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 500px;
+            transform: rotate(-0.5deg); 
+            /* Tambahkan transisi transform agar gerakannya halus */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), height 0.3s ease;
+            margin: 20px auto;
+        }
+
+        /* EFEK HOVER: Bergerak saat kursor di atasnya */
+        .container:hover {
+            transform: rotate(0deg) scale(1.02); /* Lurus dan sedikit membesar */
+            box-shadow: 
+                8px 8px 0px rgba(0,0,0,0.1),
+                20px 25px 0px rgba(0,0,0,0.05);
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 0.9;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #886060;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-weight: normal;
+            border-bottom: 2px dashed var(--pink-marker);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p { font-size: 1.2rem; line-height: 1.4; }
+
+        /* --- BUTTONS --- */
+        .sketch-btn {
+            background-color: var(--pink-marker);
+            color: var(--pencil);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: 2px solid var(--pencil);
+            border-radius: 50px; /* Kapsul */
+            cursor: pointer;
+            box-shadow: 3px 4px 0px var(--pencil);
+            margin: 10px 0;
+            transition: all 0.2s ease;
+            width: 100%;
+            max-width: 300px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-decoration: none; /* Untuk tag <a> */
+            line-height: 1.5;
+        }
+
+        .sketch-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 6px 0px var(--pencil);
+        }
+        
+        .sketch-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px var(--pencil);
+        }
+
+        .btn-green { background-color: var(--green-marker); }
+        .btn-blue { background-color: var(--blue-marker); }
+        .btn-yellow { background-color: var(--yellow-marker); }
+        .btn-purple { background-color: var(--purple-marker); }
+        .btn-love { background-color: #ffb7b2; border-color: #d63333; color: #8a1c1c; }
+        
+        .btn-back {
+            background: transparent;
+            border: 2px dashed var(--pencil);
+            box-shadow: none;
+            margin-top: 30px;
+            font-size: 1.1rem;
+        }
+        .btn-back:hover {
+            background: #eee;
+            box-shadow: none;
+            transform: scale(1.05);
+        }
+
+        /* --- PAGE SECTIONS --- */
+        .page-section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* --- CAROUSEL / SLIDER STYLE --- */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .polaroid-container {
+            width: 220px;
+            height: 280px;
+            position: relative;
+        }
+        .polaroid {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            border: 1px solid #ccc;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+            transform: rotate(-5deg) scale(0.9);
+        }
+        .polaroid.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: rotate(2deg) scale(1);
+            z-index: 2;
+        }
+        .polaroid-img {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.8rem;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+        /* Style untuk Gambar */
+        .polaroid-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Agar gambar tidak gepeng */
+        }
+        
+        /* Tombol Navigasi Slider */
+        .slider-btn {
+            background: white;
+            border: 2px solid var(--pencil);
+            border-radius: 50%;
+            width: 40px; height: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            margin: 0 10px;
+            font-family: 'Patrick Hand';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+        .slider-btn:hover { background: #f0f0f0; transform: scale(1.1); }
+
+        /* Deskripsi Dinamis di bawah slider */
+        .dynamic-description {
+            min-height: 60px;
+            padding: 10px;
+            border: 1px dashed #ccc;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-color: rgba(255,255,255,0.5);
+            font-style: italic;
+        }
+
+        /* --- SPOTIFY STYLE --- */
+        .spotify-container {
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .spotify-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px dashed #ccc;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .spotify-item:hover {
+            background-color: rgba(0,0,0,0.02);
+            border-radius: 10px;
+        }
+        .spotify-number {
+            font-size: 1.2rem;
+            color: #888;
+            margin-right: 15px;
+            width: 20px;
+        }
+        .spotify-img-box {
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            margin-right: 15px;
+            border: 1px solid var(--pencil);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+            border-radius: 4px;
+            overflow: hidden; /* Supaya gambar tidak keluar kotak */
+        }
+        .spotify-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .spotify-info {
+            flex-grow: 1;
+        }
+        .song-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--pencil);
+        }
+        .song-artist {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .play-icon {
+            font-size: 1.5rem;
+            color: #1DB954;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Animasi Bintang Kelap-kelip */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3) rotate(15deg); }
+        }
+
+        /* Coretan Pojok */
+        .corner-doodle {
+            position: absolute;
+            width: 40px; height: 40px; pointer-events: none; opacity: 0.6;
+        }
+        .top-left { top: -15px; left: -15px; border-top: 3px solid var(--pencil); border-left: 3px solid var(--pencil); border-radius: 10px 0 0 0; }
+        .bottom-right { bottom: -15px; right: -15px; border-bottom: 3px solid var(--pencil); border-right: 3px solid var(--pencil); border-radius: 0 0 10px 0; }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 25px; width: 90%; }
+            .polaroid-container { width: 180px; height: 240px; }
+        }
+        
+        /* --- AKHIR KODE CSS --- */
